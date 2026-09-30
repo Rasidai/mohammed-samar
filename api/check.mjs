@@ -1,22 +1,12 @@
-// Temporary: verifies the Apps Script deployment ID read from a photo (I/l and O/0 look alike).
-// GET only — never writes to the sheet. Remove after verification.
-const BASE = 'AKfycbyJASOTVjsADghmzw_oVt1IlaO8w22mIdtY_QeKo-hZPtPEkIoM29Rqa5duh6eXLep7';
-const SWAP = { I: 'l', l: 'I', O: '0', '0': 'O' };
+// Temporary diagnostics for the Apps Script endpoint — GET only, never writes. Remove after verification.
+const URL_ = 'https://script.google.com/macros/s/AKfycbyJASOTVjsADghmzw_oVt1IlaO8w22mIdtY_QeKo-hZPtPEkIoM29Rqa5duh6eXLep7/exec';
+const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
 export default async function handler(req, res) {
-  const pos = [...BASE].map((c, i) => (SWAP[c] ? i : -1)).filter(i => i >= 0);
-  const variants = [];
-  for (let m = 0; m < (1 << pos.length); m++) {
-    const a = [...BASE]; pos.forEach((p, k) => { if (m & (1 << k)) a[p] = SWAP[a[p]]; }); variants.push(a.join(''));
+  const out = {};
+  for (const [k, opt] of Object.entries({ manual: { redirect: 'manual' }, follow: { redirect: 'follow' }, ua: { redirect: 'follow', headers: { 'User-Agent': UA } } })) {
+    try { const r = await fetch(URL_, opt); const t = await r.text();
+      out[k] = { status: r.status, location: r.headers.get('location'), body: t.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300) }; }
+    catch (e) { out[k] = { err: String(e) }; }
   }
-  const out = [];
-  for (let i = 0; i < variants.length; i += 16) {
-    const batch = variants.slice(i, i + 16);
-    const r = await Promise.all(batch.map(async id => {
-      try { const x = await fetch(`https://script.google.com/macros/s/${id}/exec`, { redirect: 'manual' });
-        const t = x.status === 200 ? (await x.text()).slice(0, 400) : ''; return { id, s: x.status, doGet: /doGet/.test(t) }; }
-      catch (e) { return { id, s: 'err' }; }
-    }));
-    out.push(...r.filter(v => v.s !== 404));
-  }
-  res.status(200).json({ tried: variants.length, hits: out });
+  res.status(200).json(out);
 }
