@@ -1,0 +1,1012 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="دعوة زفاف محمد — الجمعة 16 أكتوبر 2026، قاعة رويال للاحتفالات بالدمام">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mohammed1610.vercel.app/">
+<meta property="og:site_name" content="دعوة زفاف محمد">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="دعوة خاصة — زفاف محمد">
+<meta property="og:description" content="الجمعة 16 أكتوبر 2026 · قاعة رويال للاحتفالات بالدمام">
+<meta property="og:image" content="https://mohammed1610.vercel.app/og-m.png">
+<meta property="og:image:secure_url" content="https://mohammed1610.vercel.app/og-m.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="محمد — دعوة خاصة — 16 • 10 • 2026">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>مرسوم ليلة</title>
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap">
+<style>
+/* Layout: seven full-screen chapters on a scroll-snapped deck (9:16 first), preceded by a
+   4–5s gate overlay. Single deliberate look: obsidian night, antique gold, wax burgundy. */
+:root{
+  --black:#000;
+  --g1:#8A642E; --g2:#E8C77B; --g3:#FFF0BD; --g4:#A87935;
+  --gold:#C9A15C;
+  --gold-soft:rgba(201,161,92,.55);
+  --gold-faint:rgba(201,161,92,.2);
+  --ivory:#F1E8D6;
+  --ivory-dim:#A89C86;
+  --metal:linear-gradient(135deg,#5a3c16 0%,var(--g2) 18%,var(--g3) 26%,var(--g4) 40%,#4f3413 55%,#d9b56a 72%,var(--g3) 80%,#7a5526 100%);
+  --text-gold:linear-gradient(100deg,var(--g1) 0%,var(--g2) 30%,var(--g3) 45%,var(--g2) 58%,var(--g4) 76%,var(--g1) 100%);
+  --f-script:"Aref Ruqaa","Noto Naskh Arabic",serif;
+  --f-body:"Noto Naskh Arabic","Geeza Pro","Times New Roman",serif;
+  --f-label:"Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-num:"Cormorant Garamond","Times New Roman",serif;
+  --ease:cubic-bezier(.65,0,.2,1);
+  --soft:cubic-bezier(.22,.8,.24,1);
+  --top:env(safe-area-inset-top,0px);
+  --bot:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--black);color:var(--ivory);height:100%;margin:0}
+body{font-family:var(--f-body);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--g2);outline-offset:4px}
+.gold-text{background:var(--text-gold);background-size:240% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;transition:opacity 1.6s ease}
+#sky.off{opacity:0}
+
+/* ================= DECK ================= */
+.deck{position:fixed;inset:0;z-index:2;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;
+  overscroll-behavior:contain;scrollbar-width:none}
+.deck::-webkit-scrollbar{display:none}
+.deck.free{scroll-snap-type:none}
+.locked .deck{overflow:hidden}
+.ch{position:relative;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;
+  display:grid;place-items:center;padding-inline:max(26px,7vw);
+  padding-block:calc(52px + var(--top)) calc(34px + var(--bot))}
+.ch-in{width:100%;max-width:420px}
+.label{position:absolute;top:calc(22px + var(--top));left:0;right:0;text-align:center;
+  font-family:var(--f-label);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--gold-soft);
+  opacity:0;transition:opacity 1.4s var(--soft) .2s}
+.ch.in .label{opacity:1}
+.js [data-rv]{opacity:0;transform:translateY(18px);filter:blur(6px);
+  transition:opacity 1.5s var(--soft),transform 1.7s var(--soft),filter 1.5s var(--soft);transition-delay:var(--d,0s)}
+.js .ch.in [data-rv]{opacity:1;transform:none;filter:none}
+
+/* ================= chrome ================= */
+.sound{position:fixed;z-index:60;top:calc(12px + var(--top));left:12px;height:28px;padding:0 10px 0 9px;border-radius:14px;
+  display:flex;align-items:center;gap:6px;border:1px solid var(--gold-faint);background:rgba(0,0,0,.55);
+  font-family:var(--f-label);font-size:11px;color:var(--g2);opacity:0;pointer-events:none;transition:opacity 1.2s,border-color .4s}
+.entered .sound{opacity:.75;pointer-events:auto}
+.ready .sound{opacity:1}
+.sound svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.3;flex:none}
+.sound .mx{display:none}
+.sound.muted .w{display:none}.sound.muted .mx{display:inline}
+.sound.muted{color:var(--ivory-dim);border-color:rgba(168,156,134,.25)}
+.progress{position:fixed;z-index:55;right:10px;top:50%;translate:0 -50%;display:grid;gap:9px;opacity:0;transition:opacity 1.4s}
+.ready .progress{opacity:1}
+.progress button{display:block;width:14px;height:14px;position:relative}
+.progress button::before{content:"";position:absolute;right:6px;top:3px;width:1px;height:8px;background:rgba(201,161,92,.28);
+  transition:height .8s var(--soft),background .8s,top .8s var(--soft)}
+.progress button.on::before{height:14px;top:0;background:var(--g2)}
+.progress button.past::before{background:rgba(201,161,92,.55)}
+.hush .sound,.hush .progress{opacity:.12!important}
+
+/* ================= ENTRY ================= */
+.entry{position:fixed;inset:0;z-index:58;background:#050403;display:grid;place-content:center;justify-items:center;text-align:center;
+  gap:min(2.2svh,18px);padding-inline:28px;clip-path:circle(150% at 50% var(--iy,62%));
+  transition:clip-path 1.5s cubic-bezier(.7,0,.3,1),opacity 1.5s ease}
+.entry.iris{clip-path:circle(0% at 50% var(--iy,62%));opacity:.2;pointer-events:none}
+.entry .in{display:contents}
+.entry.iris .en-stage{transform:scale(.94);filter:blur(3px);transition:transform 1.5s var(--ease),filter 1.5s}
+.en-stage{display:grid;justify-items:center;gap:min(2.2svh,18px)}
+.en-orn{width:74px;height:74px}
+.en-orn *{fill:none;stroke:var(--g4);stroke-width:.6}
+.en-orn .d{stroke-dasharray:300;stroke-dashoffset:300;animation:enDraw 2.6s var(--ease) .2s forwards}
+.en-orn .d2{animation-delay:.6s}
+@keyframes enDraw{to{stroke-dashoffset:0}}
+.en-names{margin:0;font-family:var(--f-script);font-weight:700;font-size:min(13vw,7svh,58px);line-height:1.45}
+.en-names i{font-style:normal;font-family:var(--f-num);font-weight:300;font-size:.6em;margin-inline:.35em;vertical-align:.1em;-webkit-text-fill-color:var(--g4)}
+.en-sub{margin:0;font-family:var(--f-label);font-weight:400;font-size:12px;letter-spacing:.14em;color:var(--ivory-dim)}
+.en-rule{display:flex;align-items:center;gap:8px}
+.en-rule b{display:block;width:34px;height:1px;background:rgba(201,161,92,.35)}
+.en-rule i{display:block;width:4px;height:4px;rotate:45deg;background:var(--g4)}
+.en-fade{opacity:0;transform:translateY(8px);filter:blur(6px);animation:enIn 1.6s var(--soft) forwards;animation-delay:var(--d,0s)}
+@keyframes enIn{to{opacity:1;transform:none;filter:none}}
+.en-open{position:relative;margin-top:min(3.5svh,28px);width:118px;height:118px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.10),rgba(255,255,255,.02) 42%,rgba(0,0,0,.2) 70%),#0a0908;
+  box-shadow:0 0 0 1px var(--g4),0 0 0 5px #050403,0 0 0 6px rgba(201,161,92,.28),inset 0 0 22px rgba(232,199,123,.12),inset 0 1px 0 rgba(255,240,189,.25),0 18px 40px rgba(0,0,0,.8);
+  transition:transform .35s var(--soft),box-shadow .35s}
+.en-open:active{transform:scale(.95)}
+.en-open span{font-family:var(--f-label);font-weight:500;font-size:13px;color:var(--g2);line-height:1.5}
+.en-open::before{content:"";position:absolute;inset:14px;border-radius:50%;border:1px solid rgba(201,161,92,.22)}
+.en-open::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(232,199,123,.55);opacity:0;
+  animation:enPulse 4.2s ease-out 3.4s infinite}
+@keyframes enPulse{0%{opacity:0;transform:scale(1)}8%{opacity:.7}40%{opacity:0;transform:scale(1.32)}100%{opacity:0;transform:scale(1.32)}}
+
+/* ================= GATE ================= */
+.gate{position:fixed;inset:0;z-index:50;background:#000;overflow:hidden;
+  display:grid;grid-template-rows:auto 1fr;justify-items:center;
+  padding-block:calc(7svh + var(--top)) calc(6svh + var(--bot));transition:opacity 1s ease}
+.gate.gone{opacity:0;pointer-events:none}
+.gtext{min-height:15svh;display:grid;align-content:center;gap:8px;text-align:center;padding-inline:24px;transition:opacity 1s,filter 1s}
+.gtext p{margin:0;opacity:0;filter:blur(8px);transform:translateY(8px);
+  transition:opacity 1.3s var(--soft),filter 1.3s var(--soft),transform 1.5s var(--soft)}
+.gtext .l1{font-family:var(--f-body);font-size:clamp(17px,4.6vw,20px);color:var(--ivory-dim)}
+.gtext .l2{font-family:var(--f-script);font-weight:700;font-size:clamp(34px,9.6vw,46px);line-height:1.4}
+.gtext p.show{opacity:1;filter:none;transform:none}
+.gate.through .gtext{opacity:0;filter:blur(6px)}
+
+.camera{--gw:min(64vw,33svh,300px);align-self:center;position:relative;display:grid;place-items:center;
+  transform-origin:50% 55%;transition:transform 2.1s cubic-bezier(.5,0,.3,1)}
+.gate.opening .camera{transform:scale(1.28)}
+.gate.through .camera{transform:scale(6.5);transition:transform 1.1s cubic-bezier(.7,0,.95,.5)}
+.gatewrap{position:relative;width:var(--gw);aspect-ratio:9/15;
+  clip-path:inset(0 50% 0 50%);filter:brightness(.08);
+  transition:clip-path 1.4s var(--ease),filter 1.9s ease-out}
+.gate.s2 .gatewrap{clip-path:inset(-8% -10% -12% -10%);filter:brightness(1)}
+.gate.through .gatewrap{filter:brightness(1.6)}
+
+/* light seam that splits */
+.beam{position:absolute;top:0;bottom:0;left:50%;width:1.5px;margin-left:-.75px;z-index:4;pointer-events:none;
+  background:linear-gradient(transparent,var(--g3) 22%,#fff 50%,var(--g3) 78%,transparent);
+  box-shadow:0 0 6px 1px rgba(255,236,190,.7);
+  transform:scaleY(0);opacity:0;transition:transform .7s var(--ease),opacity .4s}
+.gate.s1 .beam{transform:scaleY(1);opacity:1}
+.gate.s2 .beam{transition:transform 1.4s var(--ease),opacity 1.2s ease .3s;opacity:0}
+.gate.s2 .beam.a{transform:translateX(calc(var(--gw) / 2))}
+.gate.s2 .beam.b{transform:translateX(calc(var(--gw) / -2))}
+
+/* outer frame */
+.frame{position:absolute;inset:0;padding:6px;border-radius:50% 50% 0 0/22% 22% 0 0;background:var(--metal);
+  box-shadow:0 0 0 1px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,240,189,.45),inset 0 -2px 6px rgba(0,0,0,.6)}
+/* inner frame */
+.frame-in{position:relative;height:100%;padding:5px;border-radius:50% 50% 0 0/21% 21% 0 0;
+  background:
+    radial-gradient(circle at 50% 50%,#f6dd9e 0 .9px,#8a642e 1.4px,transparent 2px) 0 4px/5px 14px repeat-y,
+    radial-gradient(circle at 50% 50%,#f6dd9e 0 .9px,#8a642e 1.4px,transparent 2px) 100% 4px/5px 14px repeat-y,
+    linear-gradient(180deg,#140d08,#070504);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.95),inset 0 0 10px rgba(0,0,0,.95)}
+.frame-in::after{content:"";position:absolute;inset:3px;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(232,199,123,.35)}
+.doorway{position:relative;height:100%;border-radius:50% 50% 0 0/20% 20% 0 0;overflow:hidden;perspective:800px;background:#0b0705}
+.inlight{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease-in;
+  background:radial-gradient(60% 46% at 50% 60%,#fffaf0 0%,#fbe6b4 18%,#d6a458 40%,#5a3a15 70%,#120a05 100%)}
+.gate.opening .inlight{opacity:1}
+.gate.through .inlight{background:radial-gradient(90% 70% at 50% 58%,#fffdf6 0%,#fbe6b4 40%,#d6a458 80%)}
+
+.leaf{position:absolute;top:0;bottom:0;width:50%;transition:transform 2.1s cubic-bezier(.55,0,.25,1),filter 2.1s;will-change:transform}
+.leaf.l{left:0;transform-origin:0 50%}
+.leaf.r{right:0;transform-origin:100% 50%}
+.gate.opening .leaf.l{transform:rotateY(100deg);filter:brightness(.4)}
+.gate.opening .leaf.r{transform:rotateY(-100deg);filter:brightness(.4)}
+/* star lattice + its engraved shadow */
+.face{position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.05),transparent 25%,transparent 70%,rgba(0,0,0,.5)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23E8C77B' stroke-opacity='.45' stroke-width='.7'%3E%3Crect x='12' y='12' width='16' height='16'/%3E%3Crect x='12' y='12' width='16' height='16' transform='rotate(45 20 20)'/%3E%3Cpath d='M0 20h8.7M31.3 20H40M20 0v8.7M20 31.3V40'/%3E%3C/g%3E%3C/svg%3E") 0 0/24px 24px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.9' stroke-width='1.1'%3E%3Crect x='12' y='12' width='16' height='16'/%3E%3Crect x='12' y='12' width='16' height='16' transform='rotate(45 20 20)'/%3E%3Cpath d='M0 20h8.7M31.3 20H40M20 0v8.7M20 31.3V40'/%3E%3C/g%3E%3C/svg%3E") .7px 1px/24px 24px,
+    linear-gradient(180deg,#23180f,#150e09 55%,#0b0705)}
+/* edge lighting on the meeting edges */
+.leaf.l .face{box-shadow:inset 0 0 28px rgba(0,0,0,.9),inset -1px 0 0 rgba(255,236,190,.65),inset -6px 0 10px -4px rgba(232,199,123,.35)}
+.leaf.r .face{box-shadow:inset 0 0 28px rgba(0,0,0,.9),inset 1px 0 0 rgba(255,236,190,.65),inset 6px 0 10px -4px rgba(232,199,123,.35)}
+/* arabesque panels */
+.panel{position:absolute;left:15%;right:15%;border:1.5px solid var(--g4);
+  background:
+    radial-gradient(120% 80% at 50% 0%,rgba(232,199,123,.10),transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='%23E8C77B' stroke-opacity='.42' stroke-width='.7'%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='40' cy='0' r='20'/%3E%3Ccircle cx='0' cy='40' r='20'/%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Ccircle cx='20' cy='20' r='20'/%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/svg%3E") 50% 0/20px 20px,
+    #0c0806;
+  box-shadow:0 0 0 1px rgba(0,0,0,.85),inset 0 0 0 1px rgba(255,240,189,.22),inset 0 0 0 4px #0b0705,inset 0 0 0 5px rgba(232,199,123,.35),
+    inset 0 14px 26px rgba(0,0,0,.85),inset 0 -6px 14px rgba(0,0,0,.6)}
+.panel.a{top:10%;bottom:58%}
+.panel.b{top:47%;bottom:7%}
+.medal{position:absolute;left:50%;top:50%;translate:-50% -50%;width:46%;aspect-ratio:1;border-radius:50%;
+  background:var(--metal);box-shadow:0 2px 6px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,240,189,.5);display:grid;place-items:center}
+.medal::before{content:"";width:72%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#1b120b,#070403);
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.9)}
+.medal::after{content:"";position:absolute;width:36%;aspect-ratio:1;background:var(--metal);
+  clip-path:polygon(50% 0,61% 35%,100% 50%,61% 65%,50% 100%,39% 65%,0 50%,39% 35%)}
+.knock{position:absolute;top:50%;width:24%;aspect-ratio:.7;translate:0 -50%;border-radius:40% 40% 30% 30%;
+  background:linear-gradient(90deg,#3a2710,#9a7236 40%,#e8c77b 50%,#6b4a1f);box-shadow:0 2px 5px rgba(0,0,0,.9)}
+.leaf.l .knock{right:9%}.leaf.r .knock{left:9%}
+.knock::after{content:"";position:absolute;left:50%;top:45%;translate:-50% 0;width:170%;aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 200deg,#5a3c16,var(--g3),var(--g4),#3b270f,var(--g2),#5a3c16);
+  -webkit-mask:radial-gradient(circle,transparent 56%,#000 58%);mask:radial-gradient(circle,transparent 56%,#000 58%)}
+.studs{position:absolute;top:4%;bottom:4%;width:7px;
+  background:radial-gradient(circle at 45% 40%,var(--g3) 0 .8px,var(--g4) 1.6px,#3b270f 3px,transparent 3.4px) 50% 0/7px 18px repeat-y}
+.leaf.l .studs{left:5%}.leaf.r .studs{right:5%}
+/* one slow pass of light over the ornament */
+.sweep{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;overflow:hidden}
+.sweep::before{content:"";position:absolute;top:-30%;bottom:-30%;width:40%;left:-60%;transform:skewX(-14deg);
+  background:linear-gradient(90deg,transparent,rgba(232,199,123,.10) 35%,rgba(255,240,189,.32) 50%,rgba(232,199,123,.10) 65%,transparent)}
+.gate.s2 .sweep::before{animation:sweep 2.4s ease-in-out .7s forwards}
+@keyframes sweep{to{left:125%}}
+.threshold{position:absolute;left:-14%;right:-14%;bottom:-8px;height:8px;background:var(--metal);
+  clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.skip{position:fixed;z-index:53;top:calc(16px + var(--top));right:16px;font-family:var(--f-label);font-size:12px;
+  color:rgba(241,232,214,.35);padding:8px}
+
+/* ================= CH1 — NAMES ================= */
+.names{text-align:center}
+.stack{display:grid;justify-items:center;margin:0;font-size:inherit;font-weight:inherit}
+.big{font-family:var(--f-script);font-weight:700;line-height:1.2;font-size:min(56vw,26svh,270px);
+  filter:drop-shadow(0 0 16px rgba(232,199,123,.18));
+  transition:opacity 2.2s var(--soft),transform 2.4s var(--soft),filter 2.2s var(--soft)}
+.js .big{opacity:0}
+.js .big.m{transform:translateX(16vw);filter:blur(8px) drop-shadow(0 0 16px rgba(232,199,123,.18))}
+.js .big.s{transform:translateX(-16vw);filter:blur(8px) drop-shadow(0 0 16px rgba(232,199,123,.18));transition-delay:.45s}
+.names.lit .big{opacity:1;transform:none;filter:blur(0) drop-shadow(0 0 16px rgba(232,199,123,.18))}
+.names.shine .big{animation:shine 2.6s ease-in-out forwards}
+.names.shine .big.s{animation-delay:.25s}
+@keyframes shine{from{background-position:100% 0}to{background-position:0 0}}
+.x{display:flex;align-items:center;gap:14px;margin-block:-1svh;opacity:0;transform:scale(.6);
+  transition:opacity 1.6s var(--soft) 1.5s,transform 1.8s var(--soft) 1.5s}
+.names.lit .x{opacity:1;transform:none}
+.x span{font-family:var(--f-num);font-weight:300;font-size:min(15vw,7.5svh);line-height:1}
+.x i{display:block;height:1px;width:0;background:linear-gradient(90deg,transparent,var(--g2));transition:width 2s var(--ease) 1.8s}
+.x i:last-child{transform:scaleX(-1)}
+.names.lit .x i{width:min(16vw,70px)}
+.swipe{position:absolute;bottom:calc(18px + var(--bot));left:50%;translate:-50% 0;display:grid;justify-items:center;opacity:0;transition:opacity 1s}
+.names.lit .swipe{animation:fadein 1.4s var(--soft) 4.2s forwards}
+.swipe.away{animation:none!important;opacity:0!important}
+@keyframes fadein{to{opacity:1}}
+.swipe b{font-family:var(--f-label);font-weight:400;font-size:12px;letter-spacing:.08em;color:var(--g2);margin-bottom:4px}
+.swipe svg{width:20px;height:20px;fill:none;stroke:var(--g2);stroke-width:1.3;margin-top:-9px;animation:chev 1.8s ease-in-out infinite}
+.swipe svg+svg{animation-delay:.2s;opacity:.5}
+@keyframes chev{0%,100%{transform:translateY(-3px);opacity:.25}50%{transform:translateY(4px);opacity:1}}
+
+/* ================= CH2 — INVITATION ================= */
+.decree{position:relative;padding:min(4.2svh,34px) 18px;text-align:center;display:grid;gap:min(2.6svh,20px)}
+.decree::before{content:"";position:absolute;inset:0;border:1px solid var(--gold-faint)}
+.decree::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,161,92,.1)}
+.decree .corner{position:absolute;width:9px;height:9px;rotate:45deg;background:#000;border:1px solid var(--g2);z-index:1}
+.corner.t{top:-5px;left:50%;margin-left:-5px}.corner.b{bottom:-5px;left:50%;margin-left:-5px}
+.lead{margin:0;font-size:clamp(16px,4.4vw,19px);line-height:1.95;color:var(--ivory)}
+.lead span{color:var(--ivory-dim);display:block;font-size:.92em}
+.person{display:grid;justify-items:center;gap:2px}
+.person .nm{font-family:var(--f-script);font-weight:700;font-size:min(18vw,9.5svh,84px);line-height:1.25}
+.person .rel{font-family:var(--f-label);font-weight:400;font-size:12px;color:var(--gold);line-height:1.6}
+.person .fa{font-family:var(--f-body);font-weight:500;font-size:clamp(18px,5.2vw,22px);color:var(--ivory);line-height:1.6}
+.join{display:flex;align-items:center;justify-content:center;gap:12px}
+.join i{display:block;width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.join i:last-child{transform:scaleX(-1)}
+.join span{font-family:var(--f-script);font-size:min(9vw,5svh);color:var(--g2);line-height:1}
+
+/* ================= CH3 — DATE ================= */
+.date{text-align:center}
+.ghost{position:absolute;left:-14%;top:50%;font-family:var(--f-num);font-weight:300;line-height:.8;direction:ltr;
+  font-size:min(128vw,80svh);letter-spacing:-.05em;pointer-events:none;white-space:nowrap;color:var(--g2);
+  opacity:0;transform:translateY(calc(-50% + var(--py,0px))) scale(1.15);transform-origin:30% 50%;
+  transition:opacity 2.4s var(--soft),transform 2.8s var(--soft)}
+.date.in .ghost{opacity:.08;transform:translateY(calc(-50% + var(--py,0px))) scale(1)}
+.dstack{position:relative;display:grid;justify-items:center;gap:min(1.2svh,10px)}
+.dday{font-family:var(--f-label);font-weight:400;font-size:16px;letter-spacing:.12em;color:var(--g2)}
+.dnum{font-family:var(--f-num);font-weight:400;font-size:min(32vw,17svh,150px);line-height:1;direction:ltr}
+.dmon{font-family:var(--f-script);font-weight:700;font-size:min(13vw,7svh);line-height:1.35;color:var(--ivory)}
+.dyear{font-family:var(--f-num);font-weight:400;font-size:26px;letter-spacing:.2em;color:var(--g2);direction:ltr;padding-left:.2em}
+.drule{display:flex;align-items:center;gap:10px;margin-top:6px}
+.drule b{display:block;width:54px;height:1px;background:var(--gold-soft)}
+.drule i{display:block;width:6px;height:6px;rotate:45deg;border:1px solid var(--g2)}
+
+/* ================= CH4 — VENUE (VIP pass) ================= */
+.pass{position:relative;width:100%;max-width:360px;margin-inline:auto;text-align:center;
+  --notch:radial-gradient(circle at 0 var(--cut),transparent 11px,#000 11.5px) left/51% 100% no-repeat,
+          radial-gradient(circle at 100% var(--cut),transparent 11px,#000 11.5px) right/51% 100% no-repeat;
+  --cut:71%}
+.pass-body{position:relative;padding:min(4.4svh,36px) 22px min(3.4svh,28px);display:grid;justify-items:center;gap:min(2.2svh,18px);
+  background:linear-gradient(180deg,rgba(232,199,123,.06),rgba(232,199,123,.015) 60%,rgba(232,199,123,.04));
+  border:1px solid rgba(201,161,92,.5);
+  -webkit-mask:var(--notch);mask:var(--notch)}
+.pass-body::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,161,92,.12);pointer-events:none}
+.vt{font-family:var(--f-script);font-weight:700;font-size:min(12vw,6.6svh);line-height:1.35;margin:0}
+.vh{margin:0;display:grid;gap:2px}
+.vh b{font-family:var(--f-body);font-weight:600;font-size:clamp(21px,6vw,26px);line-height:1.6}
+.vh span{font-family:var(--f-label);font-weight:400;font-size:15px;color:var(--g2)}
+.glass{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:17px 18px;
+  text-decoration:none;font-family:var(--f-label);font-weight:500;font-size:17px;color:var(--g3);
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid var(--g4);border-radius:3px;
+  box-shadow:inset 0 0 18px rgba(232,199,123,.14),inset 0 1px 0 rgba(255,240,189,.25),0 10px 30px rgba(0,0,0,.6);
+  transition:box-shadow .4s,transform .3s var(--soft)}
+.glass:active{transform:scale(.98);box-shadow:inset 0 0 26px rgba(232,199,123,.28),inset 0 1px 0 rgba(255,240,189,.3)}
+.glass svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4}
+.perf{width:calc(100% - 20px);height:0;border-top:1px dashed rgba(201,161,92,.35);margin-block:min(1svh,6px)}
+.qr-row{display:flex;align-items:center;gap:14px}
+.qr-row span{font-family:var(--f-label);font-weight:400;font-size:12px;color:var(--ivory-dim);line-height:1.9;text-align:start;max-width:10em}
+.qr{display:block;width:74px;height:74px;background:var(--ivory);padding:6px}
+
+/* ================= CH5 — SEAL ================= */
+.seal-ch .ch-in{position:relative;height:100%;display:grid;place-items:center}
+.stageA,.stageB{grid-area:1/1;width:100%;display:grid;justify-items:center}
+.stageA{gap:min(3svh,24px);transition:opacity 1.3s var(--soft),transform 1.5s var(--soft),filter 1.3s}
+.stageA.done{opacity:0;transform:translateY(34px) scale(.95);filter:blur(8px);pointer-events:none}
+.cue{margin:0;font-family:var(--f-label);font-weight:400;font-size:14px;color:var(--g2);transition:opacity .6s}
+.opened .cue{opacity:0!important}
+.seal-ch .js-a{opacity:0;transform:translateY(16px);transition:opacity 1.6s var(--soft),transform 1.8s var(--soft)}
+.seal-ch.in .js-a{opacity:1;transform:none}
+.seal-ch.in .js-a.late{transition-delay:1s}
+.seal-ch.in .js-a.env{transition-delay:.5s}
+.env{position:relative;width:min(82vw,350px,46svh);aspect-ratio:1.45;perspective:1400px;cursor:pointer;margin-top:10svh;
+  filter:drop-shadow(0 34px 44px rgba(0,0,0,.95))}
+.env-back{position:absolute;inset:0;background:linear-gradient(160deg,#141210,#060505);box-shadow:inset 0 0 0 1px rgba(201,161,92,.4)}
+.leak{position:absolute;left:-30%;right:-30%;top:-95%;height:130%;z-index:0;pointer-events:none;opacity:0;
+  background:
+    radial-gradient(45% 55% at 50% 100%,rgba(255,240,205,.7),rgba(232,199,123,.28) 40%,transparent 72%),
+    conic-gradient(from 180deg at 50% 100%,transparent 0 150deg,rgba(255,236,190,.16) 158deg,transparent 164deg,rgba(255,236,190,.12) 176deg,transparent 182deg,rgba(255,236,190,.16) 196deg,transparent 204deg 360deg);
+  mix-blend-mode:screen;transition:opacity 1.6s ease .9s}
+.opened .leak{opacity:1}
+.letter{position:absolute;left:6%;right:6%;top:7%;height:86%;z-index:1;display:grid;place-content:center;gap:4px;text-align:center;padding:12px;
+  background:linear-gradient(180deg,#f6efe1,#e6d8bc);box-shadow:inset 0 0 0 1px rgba(168,121,53,.4),inset 0 0 0 6px #f3ead8,inset 0 0 0 7px rgba(168,121,53,.3);
+  transition:transform 1.7s var(--ease) 1.1s}
+.letter p{margin:0;font-family:var(--f-script);font-weight:700;color:#3a0a12;font-size:min(6.6vw,3.8svh);line-height:1.5}
+.letter small{font-family:var(--f-num);font-size:14px;letter-spacing:.2em;color:var(--g1);direction:ltr}
+.opened .letter{transform:translateY(-56%)}
+.env-front{position:absolute;inset:0;z-index:2;pointer-events:none}
+.env-front::before{content:"";position:absolute;inset:0;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='%23C9A15C' stroke-opacity='.07' stroke-width='.6'%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='40' cy='0' r='20'/%3E%3Ccircle cx='0' cy='40' r='20'/%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Ccircle cx='20' cy='20' r='20'/%3E%3C/g%3E%3C/svg%3E") 0 0/22px 22px,
+    linear-gradient(0deg,#0a0908,#16130f)}
+.env-front::after{content:"";position:absolute;inset:0;border:1px solid rgba(201,161,92,.45)}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:3;transform-origin:50% 0;transform-style:preserve-3d;
+  transition:transform 1.4s var(--ease) .75s,z-index 0s 1.4s}
+.flap::before{content:"";position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(180deg,#1a1714,#0b0a09)}
+.flap::after{content:"";position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%,50% calc(100% - 2px),calc(100% - 3px) 1px,3px 1px,50% calc(100% - 2px));background:var(--metal)}
+.opened .flap{transform:rotateX(178deg);z-index:0}
+.seal{position:absolute;left:50%;top:58%;z-index:5;width:min(33vw,124px);aspect-ratio:1;
+  transform:translate(-50%,-50%);transition:transform .35s var(--soft)}
+.seal.press{transform:translate(-50%,-50%) scale(.94)}
+.seal.shake{animation:vib .42s linear}
+@keyframes vib{0%,100%{transform:translate(-50%,-50%) scale(.94)}20%{transform:translate(calc(-50% - 1.5px),-50%) scale(.94)}40%{transform:translate(calc(-50% + 1.5px),calc(-50% + .5px)) scale(.94)}60%{transform:translate(calc(-50% - 1px),-50%) scale(.94)}80%{transform:translate(calc(-50% + 1px),-50%) scale(.94)}}
+.seal .half{position:absolute;inset:0;transition:transform 1.3s cubic-bezier(.3,0,.2,1),opacity 1.2s ease .15s}
+.seal .half svg{width:100%;height:100%;display:block;overflow:visible}
+.seal .half.a{clip-path:polygon(0 0,52% 0,46% 22%,55% 37%,43% 52%,53% 67%,47% 83%,50% 100%,0 100%)}
+.seal .half.b{clip-path:polygon(52% 0,100% 0,100% 100%,50% 100%,47% 83%,53% 67%,43% 52%,55% 37%,46% 22%)}
+.seal .crack{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.seal .crack path{fill:none;stroke:#ffe2b0;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:150;stroke-dashoffset:150}
+.seal .crack path.f{stroke-width:.8;stroke-dasharray:40;stroke-dashoffset:40}
+.seal.cracked .crack path{animation:crack .5s ease-out forwards}
+.seal.cracked .crack path.f{animation-delay:.2s}
+@keyframes crack{to{stroke-dashoffset:0}}
+.seal.split{transform:translate(-50%,-50%);pointer-events:none}
+.seal.split .crack{opacity:0;transition:opacity .3s}
+.seal.split .half.a{transform:translate(-50px,86px) rotate(-40deg);opacity:0}
+.seal.split .half.b{transform:translate(48px,96px) rotate(36deg);opacity:0}
+.seal .bit{position:absolute;left:50%;top:50%;width:6px;height:5px;border-radius:40%;background:#5a1019;opacity:0}
+.seal.split .bit{animation:bit 1s ease-out forwards}
+.seal .bit:nth-of-type(1){--tx:-38px;--ty:-28px}.seal .bit:nth-of-type(2){--tx:34px;--ty:-36px}
+.seal .bit:nth-of-type(3){--tx:-22px;--ty:48px}.seal .bit:nth-of-type(4){--tx:28px;--ty:42px}
+@keyframes bit{0%{opacity:1;transform:translate(-50%,-50%)}100%{opacity:0;transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) rotate(160deg)}}
+
+.stageB{opacity:0;transform:translateY(26px);filter:blur(8px);pointer-events:none;
+  transition:opacity 1.5s var(--soft) .35s,transform 1.7s var(--soft) .35s,filter 1.5s var(--soft) .35s}
+.stageB.show{opacity:1;transform:none;filter:none;pointer-events:auto}
+.rsvp{width:100%;max-width:360px;display:grid;gap:min(2.8svh,22px)}
+.rsvp h3{margin:0 0 min(1svh,8px);text-align:center;font-family:var(--f-script);font-weight:700;font-size:min(8.4vw,4.6svh);line-height:1.5}
+.field{display:grid;gap:6px}
+.field label,.field .lbl{font-family:var(--f-label);font-weight:400;font-size:12px;color:var(--gold)}
+.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--gold-soft);border-radius:0;
+  padding:8px 2px;font-family:var(--f-body);font-size:19px;color:var(--ivory)}
+.field input::placeholder{color:rgba(241,232,214,.28)}
+.field input:focus{outline:none;border-bottom-color:var(--g2)}
+.stepper{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gold-soft)}
+.stepper button{width:44px;height:42px;display:grid;place-items:center;font-family:var(--f-num);font-size:26px;color:var(--g2)}
+.stepper output{font-family:var(--f-label);font-weight:400;font-size:22px;min-width:2ch;text-align:center}
+.err{margin:-8px 0 -6px;min-height:1.2em;text-align:center;font-family:var(--f-label);font-size:12px;color:#d9a27c}
+.yes{width:100%;padding:17px 16px;font-family:var(--f-label);font-weight:500;font-size:16px;color:#1a1006;
+  background:var(--metal);border-radius:3px;box-shadow:0 12px 30px rgba(232,199,123,.14),inset 0 1px 0 rgba(255,255,255,.5)}
+.yes:active{transform:scale(.98)}
+.no{justify-self:center;padding:10px 14px;font-family:var(--f-label);font-weight:400;font-size:14px;color:var(--ivory-dim);
+  border-bottom:1px solid rgba(168,156,134,.35)}
+
+/* ================= CH6 — THE END ================= */
+.end{text-align:center}
+.end .scene{position:absolute;left:0;right:0;top:50%;translate:0 -50%;display:grid;justify-items:center;gap:min(2.2svh,16px);padding-inline:28px}
+.fl{margin:0;opacity:0;filter:blur(8px);transform:translateY(10px);
+  transition:opacity 2s var(--soft),filter 2s var(--soft),transform 2s var(--soft)}
+.fl.show{opacity:1;filter:none;transform:none}
+.fl.hide{opacity:0;filter:blur(6px);transform:translateY(-10px);transition-duration:1.4s}
+.e1{font-family:var(--f-body);font-size:clamp(21px,6vw,26px);color:var(--ivory-dim)}
+.e2{font-family:var(--f-script);font-weight:700;font-size:min(8.4vw,4.6svh);line-height:1.6;max-width:15ch}
+.e3{font-family:var(--f-script);font-weight:700;font-size:min(15vw,8svh);line-height:1.35}
+.e3 i{font-style:normal;font-family:var(--f-num);font-weight:300;font-size:.5em;margin-inline:.3em;vertical-align:middle;-webkit-text-fill-color:var(--g2)}
+.e4{font-family:var(--f-num);font-size:20px;letter-spacing:.2em;color:var(--g2);direction:ltr;padding-left:.2em}
+.mono{position:relative;width:min(56vw,30svh,240px);aspect-ratio:1;display:grid;place-items:center;margin-top:1svh}
+.mono svg{position:absolute;inset:0;width:100%;height:100%}
+.mono svg *{fill:none;stroke:var(--gold);stroke-width:.5}
+.mono .dr{stroke-dasharray:620;stroke-dashoffset:620}
+.mono.show .dr{animation:draw 3.2s var(--ease) forwards}
+.mono.show .dr.b{animation-delay:.5s}.mono.show .dr.c{animation-delay:1s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.mono span{font-family:var(--f-script);font-weight:700;font-size:min(14vw,7.5svh);direction:rtl}
+.end .dim{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity 10s ease}
+.end.dimmed .dim{opacity:.62}
+.replay{position:absolute;bottom:calc(26px + var(--bot));left:0;right:0;margin-inline:auto;width:max-content;
+  font-family:var(--f-label);font-size:12px;color:rgba(241,232,214,.35);padding:10px;opacity:0;transition:opacity 2s;z-index:2}
+.replay.show{opacity:1}
+.blackout{position:fixed;inset:0;z-index:70;background:#000;opacity:0;pointer-events:none;transition:opacity 1.3s ease}
+.blackout.on{opacity:1;pointer-events:auto}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.4s!important;transition-delay:0s!important}
+  .mono .dr{stroke-dashoffset:0}
+}
+</style></head><body>
+
+<div id="app" dir="rtl" lang="ar">
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<!-- الصوت: ملفات محلية في assets/ ولا يعمل أي صوت قبل أول لمسة من الضيف. -->
+<button class="sound" id="soundBtn" type="button" aria-pressed="true" aria-label="كتم الصوت">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><g class="w"><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></g><g class="mx"><path d="M16 9.5l5 5M21 9.5l-5 5"/></g></svg>
+  <span id="soundLbl">الصوت</span>
+</button>
+<nav class="progress" id="progress" aria-label="فصول الدعوة"></nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="waxG" cx="36%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#a42a3a"/><stop offset=".35" stop-color="#6e1422"/>
+      <stop offset=".7" stop-color="#420b15"/><stop offset="1" stop-color="#1f040a"/>
+    </radialGradient>
+    <radialGradient id="pressG" cx="50%" cy="42%" r="60%">
+      <stop offset="0" stop-color="#6a1321"/><stop offset=".8" stop-color="#3f0a13"/><stop offset="1" stop-color="#2a060d"/>
+    </radialGradient>
+    <linearGradient id="rimG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF0BD"/><stop offset=".3" stop-color="#A87935"/><stop offset=".55" stop-color="#E8C77B"/>
+      <stop offset=".8" stop-color="#6b4a1f"/><stop offset="1" stop-color="#E8C77B"/>
+    </linearGradient>
+    <linearGradient id="glyphG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF0BD"/><stop offset=".5" stop-color="#E8C77B"/><stop offset="1" stop-color="#8A642E"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+</svg>
+
+<!-- ============================ ENTRY ============================ -->
+<section class="entry" id="entry" aria-label="دعوة خاصة">
+  <div class="en-stage">
+    <svg class="en-orn" viewBox="0 0 74 74" aria-hidden="true">
+      <circle class="d" cx="37" cy="37" r="34"/>
+      <rect class="d d2" x="20" y="20" width="34" height="34"/>
+      <rect class="d d2" x="20" y="20" width="34" height="34" transform="rotate(45 37 37)"/>
+      <circle cx="37" cy="37" r="2.2" style="fill:var(--g2);stroke:none"/>
+    </svg>
+    <p class="en-names gold-text en-fade" style="--d:.9s">محمد</p>
+    <div class="en-rule en-fade" style="--d:1.4s" aria-hidden="true"><b></b><i></i><b></b></div>
+    <p class="en-sub en-fade" style="--d:1.6s">دعوة خاصة</p>
+    <button class="en-open en-fade" id="enterBtn" type="button" style="--d:2.2s"><span>افتح الدعوة</span></button>
+  </div>
+</section>
+
+<!-- ============================ THE GATE ============================ -->
+<section class="gate" id="gate" aria-label="البوابة">
+  <div class="gtext">
+    <p class="l1" id="l1">ومن بين كل الحكايات...</p>
+    <p class="l2 gold-text" id="l2">كُتبت لنا ليلة</p>
+  </div>
+  <div class="camera" id="camera">
+    <div class="gatewrap">
+      <div class="frame"><div class="frame-in"><div class="doorway">
+        <div class="inlight"></div>
+        <div class="leaf l"><div class="face"></div><div class="studs"></div><div class="panel a"><div class="medal"></div></div><div class="panel b"></div><div class="knock"></div></div>
+        <div class="leaf r"><div class="face"></div><div class="studs"></div><div class="panel a"><div class="medal"></div></div><div class="panel b"></div><div class="knock"></div></div>
+        <div class="sweep"></div>
+      </div></div></div>
+      <div class="threshold"></div>
+    </div>
+    <div class="beam a"></div><div class="beam b"></div>
+  </div>
+  <button class="skip" id="skip" type="button">تخطٍّ</button>
+</section>
+
+<!-- ============================ DECK ============================ -->
+<main class="deck" id="deck">
+
+  <!-- CH1 THE NAMES -->
+  <section class="ch names" id="c-names" data-title="الأسماء">
+    <h1 class="stack" aria-label="محمد">
+      <span class="big gold-text m">محمد</span>
+    </h1>
+    <div class="swipe" id="swipe" aria-hidden="true">
+      <b>اسحب للأسفل</b>
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <!-- CH2 THE INVITATION -->
+  <section class="ch" id="c-inv" data-title="الدعوة">
+    <span class="label">الدعوة</span>
+    <div class="ch-in">
+      <div class="decree">
+        <i class="corner t"></i><i class="corner b"></i>
+        <p class="lead" data-rv>بكل مشاعر المحبة والتقدير<span>نتشرف بدعوتكم لمشاركتنا فرحة زفاف</span></p>
+        <div class="person" data-rv style="--d:.35s">
+          <span class="nm gold-text">محمد</span>
+          <span class="rel">ابن</span>
+          <span class="fa">عبدالله يوسف محمد</span>
+        </div>
+        <div class="join" data-rv style="--d:.65s" aria-hidden="true"><i></i><span>و</span><i></i></div>
+        <div class="person" data-rv style="--d:.9s">
+          <span class="rel">كريمة</span>
+          <span class="fa">شمس الدين عمر موسى</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH3 THE DATE -->
+  <section class="ch date" id="c-date" data-title="الموعد" aria-label="الجمعة 16 أكتوبر 2026">
+    <span class="label">الموعد</span>
+    <span class="ghost" id="ghost" aria-hidden="true">16</span>
+    <div class="dstack">
+      <span class="dday" data-rv style="--d:.5s">الجمعة</span>
+      <span class="dnum gold-text" data-rv style="--d:.75s">16</span>
+      <span class="dmon" data-rv style="--d:1s">أكتوبر</span>
+      <span class="dyear" data-rv style="--d:1.2s">2026</span>
+      <div class="drule" data-rv style="--d:1.4s" aria-hidden="true"><b></b><i></i><b></b></div>
+    </div>
+  </section>
+
+  <!-- CH4 THE VENUE -->
+  <section class="ch venue" id="c-venue" data-title="المكان">
+    <span class="label">المكان</span>
+    <div class="ch-in">
+      <div class="pass" data-rv>
+        <div class="pass-body">
+          <h2 class="vt gold-text">موعدنا هنا</h2>
+          <p class="vh"><b>قاعة رويال للاحتفالات</b><span>الدمام</span></p>
+          <a class="glass" href="https://maps.app.goo.gl/rMnd3UanPdnajWgN7" target="_blank" rel="noopener">
+            افتح الموقع
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          </a>
+          <div class="perf" aria-hidden="true"></div>
+          <div class="qr-row">
+            <!-- QR حقيقي للرابط https://maps.app.goo.gl/rMnd3UanPdnajWgN7 (Version 3, ECC M) — تم التحقق من قراءته -->
+            <svg class="qr" viewBox="0 0 29 29" role="img" aria-label="رمز QR لموقع القاعة" shape-rendering="crispEdges"><path fill="none" stroke="#120e0b" d="M0 0.5h7m2 0h2m2 0h3m1 0h3m2 0h7m-29 1h1m5 0h1m4 0h3m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m4 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h4m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h4m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h1m3 0h1m1 0h4m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h1m1 0h1m2 0h4m-21 1h1m2 0h1m1 0h2m1 0h1m1 0h1m2 0h4m2 0h1m1 0h1m1 0h1m-23 1h1m7 0h1m1 0h1m1 0h1m2 0h3m2 0h3m1 0h1m2 0h1m-26 1h10m4 0h3m1 0h3m1 0h3m-27 1h1m1 0h3m2 0h1m1 0h1m1 0h2m1 0h2m4 0h2m3 0h2m-24 1h1m1 0h2m1 0h1m1 0h2m3 0h1m2 0h5m1 0h1m1 0h2m-27 1h1m2 0h1m3 0h1m1 0h1m1 0h1m5 0h3m-19 1h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h7m-21 1h1m1 0h4m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m-24 1h3m1 0h4m2 0h1m1 0h2m2 0h2m1 0h1m3 0h1m-27 1h1m1 0h1m1 0h1m4 0h4m1 0h3m4 0h2m1 0h1m2 0h1m-29 1h1m3 0h3m4 0h3m2 0h2m4 0h3m2 0h2m-26 1h3m1 0h1m1 0h1m4 0h1m2 0h1m1 0h5m3 0h2m-29 1h1m1 0h1m1 0h3m1 0h5m2 0h2m3 0h5m1 0h1m-19 1h1m3 0h2m2 0h2m1 0h2m3 0h1m1 0h3m-29 1h7m6 0h2m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m5 0h1m1 0h3m2 0h3m4 0h1m3 0h3m-27 1h1m1 0h3m1 0h1m5 0h1m1 0h1m1 0h3m1 0h5m-25 1h1m1 0h3m1 0h1m1 0h2m7 0h2m1 0h1m1 0h6m-28 1h1m1 0h3m1 0h1m4 0h2m5 0h4m2 0h3m1 0h1m-29 1h1m5 0h1m5 0h1m1 0h8m5 0h1m-28 1h7m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1"/></svg>
+            <span>أو امسح للوصول مباشرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH5 THE SEAL -->
+  <section class="ch seal-ch" id="c-seal" data-title="الختم">
+    <div class="ch-in">
+      <div class="stageA" id="stageA">
+        <p class="cue js-a late">اضغط لفتح دعوتك</p>
+        <div class="env js-a" id="env" role="button" tabindex="0" aria-label="اضغط لفتح دعوتك">
+          <div class="env-back"></div>
+          <div class="leak"></div>
+          <div class="letter"><p>هل تكتمل ليلتنا بحضورك؟</p><small>16 • 10 • 2026</small></div>
+          <div class="env-front"></div>
+          <div class="flap"></div>
+          <div class="seal" id="seal">
+            <div class="half a"></div>
+            <div class="half b"></div>
+            <svg class="crack" viewBox="0 0 120 120" aria-hidden="true">
+              <path d="M62.4 0L55.2 26.4L66 44.4L51.6 62.4L63.6 80.4L56.4 99.6L60 120"/>
+              <path class="f" d="M66 44.4L78 50L86 47"/><path class="f" d="M51.6 62.4L40 66L33 74"/>
+            </svg>
+            <i class="bit"></i><i class="bit"></i><i class="bit"></i><i class="bit"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        RSVP: يُرسَل الرد إلى Google Sheet عبر Apps Script (RSVP_ENDPOINT في السكربت).
+        إذا كان RSVP_ENDPOINT فارغًا فالنموذج تجريبي ولا يرسل شيئًا.
+      -->
+      <div class="stageB" id="stageB">
+        <form class="rsvp" id="rsvp" novalidate>
+          <h3 class="gold-text">هل تكتمل ليلتنا بحضورك؟</h3>
+          <div class="field">
+            <label for="guestName">الاسم</label>
+            <input type="text" id="guestName" name="name" autocomplete="name" placeholder="اسمك الكريم">
+          </div>
+          <div class="field">
+            <span class="lbl" id="countLbl">عدد الحضور</span>
+            <div class="stepper" aria-labelledby="countLbl">
+              <button type="button" id="plus" aria-label="زيادة">+</button>
+              <output id="count" aria-live="polite">1</output>
+              <button type="button" id="minus" aria-label="إنقاص">−</button>
+            </div>
+          </div>
+          <p class="err" id="err" role="alert"></p>
+          <button class="yes" type="button" id="btnYes">بكل سرور، سأكون بينكم</button>
+          <button class="no" type="button" id="btnNo">أعتذر، وتسبقني دعواتي</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH6 THE END -->
+  <section class="ch end" id="c-end" data-title="الختام">
+    <div class="scene">
+      <p class="fl e1" id="e1">هناك ليالٍ تمر...</p>
+      <p class="fl e2 gold-text" id="e2">وليلتنا نود أن تبقى في الذاكرة.</p>
+    </div>
+    <div class="scene">
+      <p class="fl e3 gold-text" id="e3">محمد</p>
+      <p class="fl e4" id="e4">16 • 10 • 2026</p>
+      <div class="fl mono" id="e5" aria-label="م">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="dr" cx="100" cy="100" r="96"/>
+          <circle class="dr b" cx="100" cy="100" r="88"/>
+          <rect class="dr c" x="52" y="52" width="96" height="96"/>
+          <rect class="dr c" x="52" y="52" width="96" height="96" transform="rotate(45 100 100)"/>
+        </svg>
+        <span class="gold-text">م</span>
+      </div>
+    </div>
+    <div class="dim"></div>
+    <button class="replay" id="replay" type="button">من البداية</button>
+  </section>
+</main>
+<div class="blackout" id="blackout" aria-hidden="true"></div>
+</div>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  root.lang = 'ar'; root.dir = 'rtl';
+  root.classList.add('js', 'locked');
+  const $ = id => document.getElementById(id);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, reduce ? Math.min(ms, 200) : ms));
+  const deck = $('deck');
+
+  /* ---------------- wax seal SVG ---------------- */
+  function blob() {
+    const pts = [], n = 56;
+    for (let i = 0; i < n; i++) {
+      const a = i / n * Math.PI * 2;
+      const r = 53 + 2.6 * Math.sin(a * 5 + .7) + 1.8 * Math.sin(a * 9 + 2.1) + 1.2 * Math.sin(a * 14);
+      pts.push([60 + r * Math.cos(a), 60 + r * Math.sin(a)]);
+    }
+    const f = v => v.toFixed(2);
+    let d = 'M' + f((pts[n - 1][0] + pts[0][0]) / 2) + ' ' + f((pts[n - 1][1] + pts[0][1]) / 2);
+    for (let i = 0; i < n; i++) {
+      const p = pts[i], q = pts[(i + 1) % n];
+      d += ' Q' + f(p[0]) + ' ' + f(p[1]) + ' ' + f((p[0] + q[0]) / 2) + ' ' + f((p[1] + q[1]) / 2);
+    }
+    return d + 'Z';
+  }
+  const B = blob();
+  const sealSVG = `<svg viewBox="0 0 120 120">
+    <path d="${B}" fill="#050102" transform="translate(1.5 3)" opacity=".75" filter="url(#soft)"/>
+    <path d="${B}" fill="url(#waxG)"/>
+    <path d="${B}" fill="none" stroke="rgba(255,170,170,.10)" stroke-width="1" transform="translate(-.6 -.6)"/>
+    <circle cx="60" cy="61.4" r="41" fill="#2a060d" opacity=".55"/>
+    <circle cx="60" cy="60" r="40" fill="url(#pressG)"/>
+    <circle cx="60" cy="60" r="40" fill="none" stroke="url(#rimG)" stroke-width="2.4"/>
+    <circle cx="60" cy="60" r="35.5" fill="none" stroke="url(#rimG)" stroke-width=".6" opacity=".7"/>
+    <g font-family="Aref Ruqaa, serif" font-weight="700" font-size="25" text-anchor="middle" style="direction:rtl">
+      <text x="60.9" y="69.8" fill="rgba(0,0,0,.65)">م</text>
+      <text x="59.5" y="68.4" fill="rgba(255,225,180,.28)">م</text>
+      <text x="60" y="69" fill="url(#glyphG)">م</text>
+    </g>
+    <ellipse cx="40" cy="30" rx="15" ry="7" fill="#fff" opacity=".13" transform="rotate(-28 40 30)" filter="url(#soft)"/>
+  </svg>`;
+  document.querySelectorAll('.seal .half').forEach(h => h.innerHTML = sealSVG);
+
+  /* ---------------- sound: local files, nothing plays before the first touch ---------------- */
+  const Snd = (() => {
+    const FILES = {
+      music:  'assets/wedding-ambient.mp3',
+      door:   'assets/door-open.mp3',
+      whoosh: 'assets/whoosh.mp3',
+      reveal: 'assets/reveal.mp3',
+      seal:   null   // sealSound hook — ضع لاحقًا: 'assets/wax-seal.mp3'
+    };
+    const MUSIC_VOL = .16;
+    let ctx = null, master = null, musicEl = null, musicGain = null, muted = false;
+    const bufs = {}, loading = {};
+    try { muted = sessionStorage.getItem('marsoom-sound') === 'off'; } catch (e) {}
+    function load(n) {
+      if (!FILES[n] || !ctx) return Promise.resolve(null);
+      if (!loading[n]) loading[n] = fetch(FILES[n]).then(r => { if (!r.ok) throw 0; return r.arrayBuffer(); })
+        .then(b => new Promise((res, rej) => ctx.decodeAudioData(b, res, rej)))
+        .then(b => (bufs[n] = b)).catch(() => null);
+      return loading[n];
+    }
+    function fadeMusicIn() {
+      if (!musicGain) return;
+      const t = ctx.currentTime, g = musicGain.gain;
+      g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(MUSIC_VOL, t + 2.5);
+    }
+    function startMusic() {
+      if (!musicEl) {
+        musicEl = new Audio(FILES.music); musicEl.loop = true; musicEl.preload = 'auto';
+        musicGain = ctx.createGain(); musicGain.gain.value = 0;
+        ctx.createMediaElementSource(musicEl).connect(musicGain).connect(master);
+      }
+      musicEl.play().then(fadeMusicIn).catch(() => {});
+    }
+    function unlock() {
+      if (ctx) return;
+      const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = muted ? 0 : 1; master.connect(ctx.destination);
+      if (ctx.resume) ctx.resume();
+      const silent = ctx.createBufferSource();                 // iOS: play a 1-sample buffer inside the tap to unlock output
+      silent.buffer = ctx.createBuffer(1, 1, 22050); silent.connect(ctx.destination); silent.start(0);
+      ['door', 'whoosh', 'reveal', 'seal'].forEach(load);    // preload effects right after the first touch
+      if (!muted) startMusic();
+    }
+    function play(n, vol, fadeOut) {
+      if (!ctx || muted || !bufs[n]) return;
+      const src = ctx.createBufferSource(), g = ctx.createGain(), t = ctx.currentTime, end = t + bufs[n].duration;
+      src.buffer = bufs[n]; g.gain.setValueAtTime(vol, t);
+      if (fadeOut) { g.gain.setValueAtTime(vol, Math.max(t, end - fadeOut)); g.gain.linearRampToValueAtTime(.0001, end); }
+      src.connect(g).connect(master); src.start(t);
+    }
+    function ready(n, max) { return ctx ? Promise.race([load(n), new Promise(r => setTimeout(r, max))]) : Promise.resolve(); }
+    function setMuted(m) {
+      muted = m;
+      try { sessionStorage.setItem('marsoom-sound', m ? 'off' : 'on'); } catch (e) {}
+      if (!ctx) { if (!m) unlock(); return; }
+      const t = ctx.currentTime;
+      master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value, t); master.gain.linearRampToValueAtTime(m ? 0 : 1, t + .4);
+      if (!m) { if (!musicEl || musicEl.paused) startMusic(); }
+      else setTimeout(() => { if (muted && musicEl) musicEl.pause(); }, 450);
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (!ctx) return;
+      if (document.hidden) { ctx.suspend && ctx.suspend(); musicEl && musicEl.pause(); }
+      else if (!muted) { ctx.resume && ctx.resume(); musicEl && musicEl.play().catch(() => {}); }
+    });
+    return { unlock, play, ready, setMuted, isMuted: () => muted };
+  })();
+  const soundBtn = $('soundBtn');
+  function syncSoundBtn() {
+    const m = Snd.isMuted();
+    soundBtn.classList.toggle('muted', m);
+    $('soundLbl').textContent = m ? 'مكتوم' : 'الصوت';
+    soundBtn.setAttribute('aria-pressed', String(!m));
+    soundBtn.setAttribute('aria-label', m ? 'تشغيل الصوت' : 'كتم الصوت');
+  }
+  syncSoundBtn();
+  soundBtn.addEventListener('click', e => { e.stopPropagation(); Snd.setMuted(!Snd.isMuted()); syncSoundBtn(); });
+  function sealSound() { Snd.play('seal', .4); }   // hook: no file yet, so this is silent
+
+  /* ---------------- sky: a few points, one convergence ---------------- */
+  const cv = $('sky'), cx = cv.getContext('2d');
+  let W, H, dpr, pts = [], mode = 'idle', t0 = 0, onDone = null, alive = true;
+  function size() { dpr = Math.min(2, devicePixelRatio || 1); W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr; }
+  size(); addEventListener('resize', size);
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function converge(done) {
+    if (reduce) { done && done(); return; }
+    onDone = done; mode = 'conv'; t0 = performance.now(); pts = [];
+    for (let i = 0; i < 26; i++) {
+      const a = Math.random() * 6.283, rr = Math.sqrt(Math.random());
+      pts.push({ x0: Math.random(), y0: Math.random(), tx: .5 + Math.cos(a) * rr * .14, ty: .5 + Math.sin(a) * rr * .08, r: .6 + Math.random() * 1.2, dl: Math.random() * .25 });
+    }
+    requestAnimationFrame(frame);
+  }
+  function ambient() {
+    mode = 'amb'; pts = [];
+    for (let i = 0; i < 5; i++) pts.push({ x: Math.random(), y: Math.random(), r: .5 + Math.random(), s: .00003 + Math.random() * .00006, ph: Math.random() * 6.28 });
+    requestAnimationFrame(frame);
+  }
+  function dot(x, y, r, a) {
+    const g = cx.createRadialGradient(x, y, 0, x, y, r * 4 * dpr);
+    g.addColorStop(0, `rgba(255,236,190,${a})`); g.addColorStop(1, 'rgba(232,199,123,0)');
+    cx.fillStyle = g; cx.beginPath(); cx.arc(x, y, r * 4 * dpr, 0, 6.29); cx.fill();
+  }
+  function frame(t) {
+    if (!alive) return;
+    cx.clearRect(0, 0, W, H);
+    if (mode === 'conv') {
+      const k = Math.min(1, (t - t0) / 1900);
+      for (const p of pts) {
+        const kk = ease(Math.max(0, Math.min(1, (k - p.dl) / (1 - p.dl))));
+        const a = (.12 + .6 * kk) * (k > .88 ? Math.max(0, (1 - k) / .12) : 1);
+        dot((p.x0 + (p.tx - p.x0) * kk) * W, (p.y0 + (p.ty - p.y0) * kk) * H, p.r, a);
+      }
+      if (k >= .8 && onDone) { const f = onDone; onDone = null; f(); }
+      if (k >= 1) { ambient(); return; }
+    } else if (mode === 'amb') {
+      for (const p of pts) {
+        p.y -= p.s; if (p.y < -.02) { p.y = 1.02; p.x = Math.random(); }
+        dot(p.x * W, p.y * H, p.r, .05 + .12 * (.5 + .5 * Math.sin(t / 1200 + p.ph)));
+      }
+    } else return;
+    requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => { alive = !document.hidden; if (alive && mode !== 'idle' && !reduce) requestAnimationFrame(frame); });
+
+  /* ---------------- fit the names to ~70% of the screen width, never clipped ---------------- */
+  const bigs = [...document.querySelectorAll('.big')];
+  function fitNames() {
+    const vw = deck.clientWidth, vh = deck.clientHeight;
+    bigs.forEach(el => el.style.fontSize = '100px');
+    const r = document.createRange();
+    const wMax = Math.max(...bigs.map(el => { r.selectNodeContents(el); return r.getBoundingClientRect().width; }));
+    if (!wMax) return;
+    const byWidth = (vw * .70) / wMax * 100;
+    const byHeight = vh * .27;                    // two lines + the × must fit the chapter
+    const fs = Math.max(48, Math.min(byWidth, byHeight, 300));
+    bigs.forEach(el => el.style.fontSize = fs.toFixed(1) + 'px');
+  }
+  fitNames();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNames);
+  addEventListener('resize', fitNames);
+
+  /* ---------------- progress rail ---------------- */
+  const chapters = [...deck.querySelectorAll('.ch')];
+  const prog = $('progress');
+  ['البوابة', ...chapters.map(c => c.dataset.title)].forEach((t, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', t);
+    if (i > 0) b.onclick = () => chapters[i - 1].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    prog.appendChild(b);
+  });
+  const dots = [...prog.children];
+  function markProgress(idx) { dots.forEach((d, i) => { d.classList.toggle('on', i === idx + 1); d.classList.toggle('past', i <= idx); }); }
+  markProgress(0);
+
+  /* ---------------- GATE: ~4.5s ---------------- */
+  const gate = $('gate');
+  let phase = 'intro', timers = [];
+  const at = (ms, fn) => timers.push(setTimeout(fn, reduce ? Math.min(ms, 300) : ms));
+  function schedule() {
+    at(300, () => gate.classList.add('s1'));                       // thin vertical light
+    at(1100, () => gate.classList.add('s2'));                      // light splits, door emerges
+    at(1700, () => $('l1').classList.add('show'));
+    at(2500, () => $('l2').classList.add('show'));
+    at(3400, open);                                                // doors open + push-in
+  }
+  async function open() {
+    if (phase !== 'intro') return;
+    phase = 'open'; timers.forEach(clearTimeout);
+    await Snd.ready('door', 450);                              // if the tap just unlocked audio, let the door load
+    gate.classList.add('s1', 's2', 'opening');
+    Snd.play('door', .55);                                     // same frame the leaves start to turn
+    $('l1').classList.add('show'); $('l2').classList.add('show');
+    setTimeout(() => { gate.classList.add('through'); Snd.play('whoosh', .25, .3); }, reduce ? 100 : 1400);
+    setTimeout(enter, reduce ? 300 : 2300);
+  }
+  function enter() {
+    gate.classList.add('gone'); $('skip').remove();
+    root.classList.remove('locked'); root.classList.add('ready');
+    deck.scrollTop = 0;
+    converge(() => {
+      chapters[0].classList.add('lit', 'in');
+      setTimeout(() => Snd.play('reveal', .30), reduce ? 0 : 3200);   // once: the name is fully in
+      setTimeout(() => chapters[0].classList.add('shine'), reduce ? 0 : 3200);
+    });
+    setTimeout(() => gate.remove(), 1200);
+  }
+  gate.addEventListener('click', open);
+
+  /* ---------------- ENTRY: the first tap unlocks audio, then the gate begins ---------------- */
+  const entry = $('entry'), enterBtn = $('enterBtn');
+  let entered = false;
+  enterBtn.addEventListener('click', () => {
+    if (entered) return; entered = true;
+    Snd.unlock();                         // 1–4: create/resume AudioContext, unlock, preload effects, start music fade-in — all inside this tap
+    root.classList.add('entered');
+    const r = enterBtn.getBoundingClientRect();
+    entry.style.setProperty('--iy', ((r.top + r.height / 2) / innerHeight * 100).toFixed(1) + '%');
+    entry.classList.add('iris');          // 5: iris closes into the seal, then the gate starts
+    setTimeout(schedule, reduce ? 100 : 1100);
+    setTimeout(() => entry.remove(), reduce ? 400 : 1700);
+  });
+
+  /* ---------------- chapters ---------------- */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const c = e.target, i = chapters.indexOf(c);
+    markProgress(i);
+    cv.classList.toggle('off', i !== 0);
+    root.classList.toggle('hush', c.id === 'c-seal' || c.id === 'c-end');
+    if (i === 0 && root.classList.contains('ready') && !c.classList.contains('lit')) { c.classList.add('lit'); }
+    c.classList.add('in');
+    if (c.id === 'c-end') playEnd();
+  }), { root: deck, threshold: .6 });
+  chapters.forEach(c => io.observe(c));
+  deck.addEventListener('scroll', function s() { if (deck.scrollTop > 40) { $('swipe').classList.add('away'); deck.removeEventListener('scroll', s); } }, { passive: true });
+
+  /* subtle parallax on the background 16 */
+  const ghost = $('ghost'), dateCh = $('c-date');
+  let tick = false;
+  if (!reduce) deck.addEventListener('scroll', () => {
+    if (tick) return; tick = true;
+    requestAnimationFrame(() => { tick = false; const off = (dateCh.offsetTop - deck.scrollTop) / deck.clientHeight; ghost.style.setProperty('--py', (off * 90).toFixed(1) + 'px'); });
+  }, { passive: true });
+
+  /* keep snapping from fighting the keyboard while typing */
+  deck.addEventListener('focusin', e => { if (e.target.matches('input')) deck.classList.add('free'); });
+  deck.addEventListener('focusout', e => { if (e.target.matches('input')) setTimeout(() => { deck.classList.remove('free'); if (!ending) $('c-seal').scrollIntoView({ block: 'start' }); }, 250); });
+
+  /* ---------------- seal ---------------- */
+  const env = $('env'), seal = $('seal'), A = $('stageA'), Bst = $('stageB');
+  let sealed = true;
+  async function breakSeal() {
+    if (!sealed) return; sealed = false;
+    seal.classList.add('press');                               // 1. scale .94
+    await wait(320);
+    try { navigator.vibrate && navigator.vibrate([10, 40, 12]); } catch (e) {}
+    seal.classList.add('shake');                               // 2. faint vibration
+    await wait(420);
+    seal.classList.remove('shake'); seal.classList.add('cracked');   // 3. crack
+    sealSound();
+    await wait(560);
+    seal.classList.remove('press'); seal.classList.add('split');     // 4. split
+    A.classList.add('opened');                                 // 5. flap opens, 6. light leaks
+    env.setAttribute('aria-label', 'تم فتح الدعوة');
+    await wait(3300);
+    A.classList.add('done'); Bst.classList.add('show');
+  }
+  env.addEventListener('click', breakSeal);
+  env.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); breakSeal(); } });
+
+  /* ---------------- RSVP (DEMO — nothing is sent or stored) ---------------- */
+  let count = 1, ending = false;
+  const out = $('count'), err = $('err'), form = $('rsvp');
+  $('plus').onclick = () => { count = Math.min(10, count + 1); out.textContent = count; };
+  $('minus').onclick = () => { count = Math.max(1, count - 1); out.textContent = count; };
+  form.addEventListener('submit', e => { e.preventDefault(); document.activeElement && document.activeElement.blur(); });
+  // Google Apps Script web app that appends each reply to the Google Sheet.
+  // Empty = demo (nothing is sent) — used for the claude.ai preview, where outside requests are blocked.
+  const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJASOTVjsADghmzw_oVt1IlaO8w22mIdtY_QeKo-hZPtPEkIoM29Rqa5duh6eXLep7/exec';
+  const RSVP_SOURCE = 'groom';
+  async function submitRSVP(data) {
+    if (!RSVP_ENDPOINT) { console.info('[RSVP demo — not sent]', data); return true; }
+    // Google's reply comes back through a redirect the browser won't let the page read, so the request is sent
+    // "no-cors": it still reaches the sheet (verified), and only a real network failure counts as not sent.
+    const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 15000);
+    try {
+      await fetch(RSVP_ENDPOINT, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data), signal: ctrl.signal, keepalive: true });
+      return true;
+    } catch (e) { return false; } finally { clearTimeout(t); }
+  }
+  let sending = false;
+  async function reply(attend) {
+    if (sending) return;
+    const name = $('guestName').value.trim();
+    if (attend === 'yes' && !name) { err.textContent = 'فضلًا اكتب اسمك الكريم'; return; }   // the apology needs no name
+    err.textContent = '';
+    sending = true;
+    const btn = attend === 'yes' ? $('btnYes') : $('btnNo'), label = btn.textContent;
+    btn.textContent = 'جارٍ الإرسال…'; $('btnYes').disabled = $('btnNo').disabled = true;
+    const ok = await submitRSVP({ name, attend, guests: attend === 'yes' ? count : 0, source: RSVP_SOURCE });
+    btn.textContent = label; $('btnYes').disabled = $('btnNo').disabled = false; sending = false;
+    if (!ok) { err.textContent = 'تعذّر إرسال ردّك، حاول مرة أخرى'; return; }
+    toEnd();
+  }
+  $('btnYes').onclick = () => reply('yes');
+  $('btnNo').onclick = () => reply('no');
+  $('guestName').addEventListener('input', () => { err.textContent = ''; });
+
+  /* ---------------- THE END ---------------- */
+  const bo = $('blackout'), endCh = $('c-end');
+  async function toEnd() {
+    ending = true;
+    document.activeElement && document.activeElement.blur();
+    bo.classList.add('on');                                    // full fade to black
+    await wait(1400);
+    deck.classList.remove('free');
+    deck.scrollTop = endCh.offsetTop;
+    await wait(300);
+    bo.classList.remove('on');
+    playEnd();
+  }
+  let ended = false;
+  async function playEnd() {
+    if (ended) return; ended = true;
+    await wait(1200); $('e1').classList.add('show');
+    await wait(2000 + 1200); $('e2').classList.add('show');     // pause 1.2s after the first line settles
+    await wait(3600); $('e1').classList.add('hide'); $('e2').classList.add('hide');
+    await wait(1600); $('e3').classList.add('show');
+    await wait(1800); $('e4').classList.add('show');
+    await wait(1600); $('e5').classList.add('show');
+    await wait(4200); endCh.classList.add('dimmed');           // very slow fade
+    await wait(4000); $('replay').classList.add('show');
+  }
+  $('replay').onclick = () => {
+    deck.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    setTimeout(() => { ended = false; ending = false; ['e1','e2','e3','e4','e5','replay'].forEach(id => $(id).classList.remove('show','hide')); endCh.classList.remove('dimmed'); }, 1500);
+  };
+})();
+</script>
+</body></html>
