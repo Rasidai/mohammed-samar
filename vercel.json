@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "has": [{ "type": "host", "value": "mohammed1610.vercel.app" }], "destination": "/m/index.html" }
+    { "source": "/", "has": [{ "type": "host", "value": "mohammed1610.vercel.app" }], "destination": "/m/index.html" },
+    { "source": "/", "destination": "/full/index.html" }
   ]
 }
