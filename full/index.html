@@ -314,7 +314,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 /* ================= CH5 — SEAL ================= */
 .seal-ch .ch-in{position:relative;height:100%;display:grid;place-items:center}
-.stageA,.stageB{grid-area:1/1;width:100%;display:grid;justify-items:center}
+.stageA{grid-area:1/1;width:100%;display:grid;justify-items:center}
 .stageA{gap:min(3svh,24px);transition:opacity 1.3s var(--soft),transform 1.5s var(--soft),filter 1.3s}
 .stageA.done{opacity:0;transform:translateY(34px) scale(.95);filter:blur(8px);pointer-events:none}
 .cue{margin:0;font-family:var(--f-label);font-weight:400;font-size:14px;color:var(--g2);transition:opacity .6s}
@@ -373,27 +373,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .seal .bit:nth-of-type(1){--tx:-38px;--ty:-28px}.seal .bit:nth-of-type(2){--tx:34px;--ty:-36px}
 .seal .bit:nth-of-type(3){--tx:-22px;--ty:48px}.seal .bit:nth-of-type(4){--tx:28px;--ty:42px}
 @keyframes bit{0%{opacity:1;transform:translate(-50%,-50%)}100%{opacity:0;transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) rotate(160deg)}}
-
-.stageB{opacity:0;transform:translateY(26px);filter:blur(8px);pointer-events:none;
-  transition:opacity 1.5s var(--soft) .35s,transform 1.7s var(--soft) .35s,filter 1.5s var(--soft) .35s}
-.stageB.show{opacity:1;transform:none;filter:none;pointer-events:auto}
-.rsvp{width:100%;max-width:360px;display:grid;gap:min(2.8svh,22px)}
-.rsvp h3{margin:0 0 min(1svh,8px);text-align:center;font-family:var(--f-script);font-weight:700;font-size:min(8.4vw,4.6svh);line-height:1.5}
-.field{display:grid;gap:6px}
-.field label,.field .lbl{font-family:var(--f-label);font-weight:400;font-size:12px;color:var(--gold)}
-.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--gold-soft);border-radius:0;
-  padding:8px 2px;font-family:var(--f-body);font-size:19px;color:var(--ivory)}
-.field input::placeholder{color:rgba(241,232,214,.28)}
-.field input:focus{outline:none;border-bottom-color:var(--g2)}
-.stepper{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gold-soft)}
-.stepper button{width:44px;height:42px;display:grid;place-items:center;font-family:var(--f-num);font-size:26px;color:var(--g2)}
-.stepper output{font-family:var(--f-label);font-weight:400;font-size:22px;min-width:2ch;text-align:center}
-.err{margin:-8px 0 -6px;min-height:1.2em;text-align:center;font-family:var(--f-label);font-size:12px;color:#d9a27c}
-.yes{width:100%;padding:17px 16px;font-family:var(--f-label);font-weight:500;font-size:16px;color:#1a1006;
-  background:var(--metal);border-radius:3px;box-shadow:0 12px 30px rgba(232,199,123,.14),inset 0 1px 0 rgba(255,255,255,.5)}
-.yes:active{transform:scale(.98)}
-.no{justify-self:center;padding:10px 14px;font-family:var(--f-label);font-weight:400;font-size:14px;color:var(--ivory-dim);
-  border-bottom:1px solid rgba(168,156,134,.35)}
 
 /* ================= CH6 — THE END ================= */
 .end{text-align:center}
@@ -592,31 +571,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
             <i class="bit"></i><i class="bit"></i><i class="bit"></i><i class="bit"></i>
           </div>
         </div>
-      </div>
-
-      <!--
-        RSVP: يُرسَل الرد إلى Google Sheet عبر Apps Script (RSVP_ENDPOINT في السكربت).
-        إذا كان RSVP_ENDPOINT فارغًا فالنموذج تجريبي ولا يرسل شيئًا.
-      -->
-      <div class="stageB" id="stageB">
-        <form class="rsvp" id="rsvp" novalidate>
-          <h3 class="gold-text">هل تكتمل ليلتنا بحضورك؟</h3>
-          <div class="field">
-            <label for="guestName">الاسم</label>
-            <input type="text" id="guestName" name="name" autocomplete="name" placeholder="اسمك الكريم">
-          </div>
-          <div class="field">
-            <span class="lbl" id="countLbl">عدد الحضور</span>
-            <div class="stepper" aria-labelledby="countLbl">
-              <button type="button" id="plus" aria-label="زيادة">+</button>
-              <output id="count" aria-live="polite">1</output>
-              <button type="button" id="minus" aria-label="إنقاص">−</button>
-            </div>
-          </div>
-          <p class="err" id="err" role="alert"></p>
-          <button class="yes" type="button" id="btnYes">بكل سرور، سأكون بينكم</button>
-          <button class="no" type="button" id="btnNo">أعتذر، وتسبقني دعواتي</button>
-        </form>
       </div>
     </div>
   </section>
@@ -922,7 +876,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   deck.addEventListener('focusout', e => { if (e.target.matches('input')) setTimeout(() => { deck.classList.remove('free'); if (!ending) $('c-seal').scrollIntoView({ block: 'start' }); }, 250); });
 
   /* ---------------- seal ---------------- */
-  const env = $('env'), seal = $('seal'), A = $('stageA'), Bst = $('stageB');
+  const env = $('env'), seal = $('seal'), A = $('stageA');
   let sealed = true;
   async function breakSeal() {
     if (!sealed) return; sealed = false;
@@ -937,48 +891,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     seal.classList.remove('press'); seal.classList.add('split');     // 4. split
     A.classList.add('opened');                                 // 5. flap opens, 6. light leaks
     env.setAttribute('aria-label', 'تم فتح الدعوة');
-    await wait(3300);
-    A.classList.add('done'); Bst.classList.add('show');
+    await wait(3400);                                          // let the guest read the letter, then fade to the ending
+    toEnd();
   }
   env.addEventListener('click', breakSeal);
   env.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); breakSeal(); } });
 
-  /* ---------------- RSVP (DEMO — nothing is sent or stored) ---------------- */
-  let count = 1, ending = false;
-  const out = $('count'), err = $('err'), form = $('rsvp');
-  $('plus').onclick = () => { count = Math.min(10, count + 1); out.textContent = count; };
-  $('minus').onclick = () => { count = Math.max(1, count - 1); out.textContent = count; };
-  form.addEventListener('submit', e => { e.preventDefault(); document.activeElement && document.activeElement.blur(); });
-  // Google Apps Script web app that appends each reply to the Google Sheet.
-  // Empty = demo (nothing is sent) — used for the claude.ai preview, where outside requests are blocked.
-  const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJASOTVjsADghmzw_oVt1IlaO8w22mIdtY_QeKo-hZPtPEkIoM29Rqa5duh6eXLep7/exec';
-  async function submitRSVP(data) {
-    if (!RSVP_ENDPOINT) { console.info('[RSVP demo — not sent]', data); return true; }
-    // Google's reply comes back through a redirect the browser won't let the page read, so the request is sent
-    // "no-cors": it still reaches the sheet (verified), and only a real network failure counts as not sent.
-    const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 15000);
-    try {
-      await fetch(RSVP_ENDPOINT, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data), signal: ctrl.signal, keepalive: true });
-      return true;
-    } catch (e) { return false; } finally { clearTimeout(t); }
-  }
-  let sending = false;
-  async function reply(attend) {
-    if (sending) return;
-    const name = $('guestName').value.trim();
-    if (attend === 'yes' && !name) { err.textContent = 'فضلًا اكتب اسمك الكريم'; return; }   // the apology needs no name
-    err.textContent = '';
-    sending = true;
-    const btn = attend === 'yes' ? $('btnYes') : $('btnNo'), label = btn.textContent;
-    btn.textContent = 'جارٍ الإرسال…'; $('btnYes').disabled = $('btnNo').disabled = true;
-    const ok = await submitRSVP({ name, attend, guests: attend === 'yes' ? count : 0 });
-    btn.textContent = label; $('btnYes').disabled = $('btnNo').disabled = false; sending = false;
-    if (!ok) { err.textContent = 'تعذّر إرسال ردّك، حاول مرة أخرى'; return; }
-    toEnd();
-  }
-  $('btnYes').onclick = () => reply('yes');
-  $('btnNo').onclick = () => reply('no');
-  $('guestName').addEventListener('input', () => { err.textContent = ''; });
+  let ending = false;
 
   /* ---------------- THE END ---------------- */
   const bo = $('blackout'), endCh = $('c-end');
