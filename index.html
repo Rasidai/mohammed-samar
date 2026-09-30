@@ -948,11 +948,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJASOTVjsADghmzw_oVt1IlaO8w22mIdtY_QeKo-hZPtPEkIoM29Rqa5duh6eXLep7/exec';
   async function submitRSVP(data) {
     if (!RSVP_ENDPOINT) { console.info('[RSVP demo — not sent]', data); return true; }
+    // Google's reply comes back through a redirect the browser won't let the page read, so the request is sent
+    // "no-cors": it still reaches the sheet (verified), and only a real network failure counts as not sent.
     const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 15000);
     try {
-      const r = await fetch(RSVP_ENDPOINT, { method: 'POST', body: JSON.stringify(data), signal: ctrl.signal });   // text/plain: no preflight
-      const j = await r.json();
-      return j && j.ok === true;
+      await fetch(RSVP_ENDPOINT, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data), signal: ctrl.signal, keepalive: true });
+      return true;
     } catch (e) { return false; } finally { clearTimeout(t); }
   }
   let sending = false;
