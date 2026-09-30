@@ -542,31 +542,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     </div>
   </section>
 
-  <!-- CH5 THE SEAL -->
-  <section class="ch seal-ch" id="c-seal" data-title="الختم">
-    <div class="ch-in">
-      <div class="stageA" id="stageA">
-        <p class="cue js-a late">اضغط لفتح دعوتك</p>
-        <div class="env js-a" id="env" role="button" tabindex="0" aria-label="اضغط لفتح دعوتك">
-          <div class="env-back"></div>
-          <div class="leak"></div>
-          <div class="letter"><p>هل تكتمل ليلتنا بحضورك؟</p><small>16 • 10 • 2026</small></div>
-          <div class="env-front"></div>
-          <div class="flap"></div>
-          <div class="seal" id="seal">
-            <div class="half a"></div>
-            <div class="half b"></div>
-            <svg class="crack" viewBox="0 0 120 120" aria-hidden="true">
-              <path d="M62.4 0L55.2 26.4L66 44.4L51.6 62.4L63.6 80.4L56.4 99.6L60 120"/>
-              <path class="f" d="M66 44.4L78 50L86 47"/><path class="f" d="M51.6 62.4L40 66L33 74"/>
-            </svg>
-            <i class="bit"></i><i class="bit"></i><i class="bit"></i><i class="bit"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CH6 THE END -->
   <section class="ch end" id="c-end" data-title="الختام">
     <div class="scene">
@@ -588,6 +563,30 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     </div>
     <div class="dim"></div>
     <button class="replay" id="replay" type="button">من البداية</button>
+  </section>
+  <!-- CH5 THE SEAL -->
+  <section class="ch seal-ch" id="c-seal" data-title="الختم">
+    <div class="ch-in">
+      <div class="stageA" id="stageA">
+        <p class="cue js-a late">اضغط لفتح دعوتك</p>
+        <div class="env js-a" id="env" role="button" tabindex="0" aria-label="اضغط لفتح دعوتك">
+          <div class="env-back"></div>
+          <div class="leak"></div>
+          <div class="letter"><p>تكتمل فرحتنا بحضوركم</p><small>16 • 10 • 2026</small></div>
+          <div class="env-front"></div>
+          <div class="flap"></div>
+          <div class="seal" id="seal">
+            <div class="half a"></div>
+            <div class="half b"></div>
+            <svg class="crack" viewBox="0 0 120 120" aria-hidden="true">
+              <path d="M62.4 0L55.2 26.4L66 44.4L51.6 62.4L63.6 80.4L56.4 99.6L60 120"/>
+              <path class="f" d="M66 44.4L78 50L86 47"/><path class="f" d="M51.6 62.4L40 66L33 74"/>
+            </svg>
+            <i class="bit"></i><i class="bit"></i><i class="bit"></i><i class="bit"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <div class="blackout" id="blackout" aria-hidden="true"></div>
@@ -883,8 +882,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     seal.classList.remove('press'); seal.classList.add('split');     // 4. split
     A.classList.add('opened');                                 // 5. flap opens, 6. light leaks
     env.setAttribute('aria-label', 'تم فتح الدعوة');
-    await wait(3400);                                          // let the guest read the letter, then fade to the ending
-    toEnd();
+
   }
   env.addEventListener('click', breakSeal);
   env.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); breakSeal(); } });
